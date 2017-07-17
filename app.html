@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="musicPlayer">
+<head>
+    <title>MusicPlayer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="ngmodules/angular.js"></script>
+    <script src="ngmodules/angular-resource.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="css/custom.css" rel="stylesheet"/>
+    
+    <script>
+        angular.module("musicPlayer");
+    </script>
+    <script src="controllers/musicPlayerCtrl.js"></script>
+</head>
+<body ng-controller="musicPlayerCtrl">
+    <div class="container-fluid well">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            Search will go here
+        </div>
+        <div>
+            Player will go here
+        </div>
+    </div>
+</body>
+</html>
