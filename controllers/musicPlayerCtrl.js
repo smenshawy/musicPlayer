@@ -15,6 +15,18 @@ angular.module('musicPlayer')
 .controller('musicPlayerCtrl', function($scope, mediaService, smallScreenWidth, $rootScope) {
 
   /**
+   * I wanted to avoid working with objects from the DOM directly but the other approach would be to have 2 audio controls, 
+   * one for displaying and the other for playing in case a song was seleced to be displayed while the previous one was still
+   * running. but that approach would be really complex because I would have to keep swaping them whenever a song is played and
+   * another is displayed (the control for display will be used for playing and the other control will be used for display).
+   * ()
+   */
+    var audioPlayer = document.getElementById("audioPlayer");
+  
+    mediaService.setAudioPlayer(audioPlayer);
+
+
+  /**
  * behavior
  * @name selectSong
  * 
@@ -34,18 +46,9 @@ angular.module('musicPlayer')
      * get displayed
      */
     mediaService.setSmallScreen(window.innerWidth <= parseInt(smallScreenWidth));
-    /**
-     * I wanted to avoid working with objects from the DOM directly but the other approach would be to have 2 audio controls, 
-     * one for displaying and the other for playing in case a song was seleced to be displayed while the previous one was still
-     * running. but that approach would be really complex because I would have to keep swaping them whenever a song is played and
-     * another is displayed (the control for display will be used for playing and the other control will be used for display).
-     * ()
-     */
-    var audioPlayer = document.getElementById("audioPlayer");
     audioPlayer.onended = function(){
       $scope.$apply('mediaService.toggleSong()');
     }
-    mediaService.setAudioPlayer(audioPlayer);
     mediaService.setSelectedSong(song);
     $scope.songSelected = true;
   }
