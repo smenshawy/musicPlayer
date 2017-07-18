@@ -8,7 +8,7 @@
             <img class="media-object" ng-src="{{song.artworkUrl60}}" alt="{{song.artistName}}">
         </a>
     </div>
-    <div class="media-body {{song.trackId==playingSongId? ' btn-primary' : ''}}">
+    <div class="media-body {{song.trackId===playingSongId? ' btn-primary' : ''}}">
         <h4 class="media-heading">{{song.trackName}}</h4>
         {{song.artistName}}<br/>
         {{song.collectionName}}

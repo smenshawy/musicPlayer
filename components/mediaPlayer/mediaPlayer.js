@@ -59,8 +59,8 @@ angular.module('mediaPlayer', ['customServices'])
          * 
          */
         toggleSong: function(){
-            if(playingSongId == "" || playingSongId != selectedSong.trackId){
-                if(audioPlayer.src != selectedSong.previewUrl){
+            if(playingSongId === "" || playingSongId !== selectedSong.trackId){
+                if(audioPlayer.src !== selectedSong.previewUrl){
                     audioPlayer.src = selectedSong.previewUrl;
                 }
                 audioPlayer.play();

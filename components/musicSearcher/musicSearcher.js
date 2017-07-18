@@ -30,7 +30,7 @@ angular.module('musicSearcher', ['customFilters', 'customServices'])
                 $scope.selectedPage = newPage;
             }
             $scope.getPageClass = function (page) {
-                return $scope.selectedPage == page ? activeClass : "";
+                return $scope.selectedPage === page ? activeClass : "";
             }
             $scope.query = '';
             /**

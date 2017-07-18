@@ -19,8 +19,9 @@ angular.module('musicPlayer')
    * one for displaying and the other for playing in case a song was seleced to be displayed while the previous one was still
    * running. but that approach would be really complex because I would have to keep swaping them whenever a song is played and
    * another is displayed (the control for display will be used for playing and the other control will be used for display).
-   * also I know i should keep UI away from services but the audio player is not visible so it just does some functionality neede
-   * by more than one component of the application and the other cleaner approach would be really complex.
+   * also I know i should keep UI away from services but the audio player is not visible so it just does some functionality needed
+   * to be central and consistent for usage by more than one component of the application and the other cleaner approach would be 
+   * really complex.
    */
     var audioPlayer = document.getElementById("audioPlayer");
   
