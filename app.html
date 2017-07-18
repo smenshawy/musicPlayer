@@ -10,12 +10,13 @@
     <link href="css/custom.css" rel="stylesheet"/>
     
     <script>
-        angular.module("musicPlayer", ['musicSearcher']);
+        angular.module("musicPlayer", ['musicSearcher', 'mediaPlayer']);
     </script>
     <script src="controllers/musicPlayerCtrl.js"></script>
-    <script src="services/customServices.js"></script>
     <script src="filters/customFilters.js"></script>
+    <script src="services/customServices.js"></script>
     <script src="components/musicSearcher/musicSearcher.js"></script>
+    <script src="components/mediaPlayer/mediaPlayer.js"></script>
 </head>
 <body ng-controller="musicPlayerCtrl">
     <div class="container-fluid well">
@@ -23,8 +24,18 @@
             <music-searcher playing-song-id="getPlayingSongId()" select-song="selectSong(songVal)"/>
         </div>
         <div ng-if="songSelected">
-            Player will go here
+            <div class="col-lg-8 col-md-8 hidden-sm hidden-xs">
+                <media-displayer/>
+            </div>
+            <nav class="navbar navbar-default navbar-fixed-bottom visible-sm visible-xs">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <media-player autoplay="true" />
+                    </div>
+                </div>
+            </nav>
         </div>
     </div>
+    <audio id="audioPlayer"></audio>
 </body>
 </html>
