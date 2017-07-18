@@ -10,17 +10,19 @@
     <link href="css/custom.css" rel="stylesheet"/>
     
     <script>
-        angular.module("musicPlayer");
+        angular.module("musicPlayer", ['musicSearcher']);
     </script>
     <script src="controllers/musicPlayerCtrl.js"></script>
     <script src="services/customServices.js"></script>
+    <script src="filters/customFilters.js"></script>
+    <script src="components/musicSearcher/musicSearcher.js"></script>
 </head>
 <body ng-controller="musicPlayerCtrl">
     <div class="container-fluid well">
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            Search will go here
+            <music-searcher playing-song-id="getPlayingSongId()" select-song="selectSong(songVal)"/>
         </div>
-        <div>
+        <div ng-if="songSelected">
             Player will go here
         </div>
     </div>

@@ -1,0 +1,24 @@
+<input type="search" class="form-control form-control-pa" ng-model="query" ng-keyup="onKeyupSearch()"
+               placeholder="Search artist"/>
+<div class="media" 
+        ng-click="selectSongFn({songVal: song})"
+        ng-repeat="song in artistSongs | range:selectedPage:pageSize">
+    <div class="media-left">
+        <a href="#">
+            <img class="media-object" ng-src="{{song.artworkUrl60}}" alt="{{song.artistName}}">
+        </a>
+    </div>
+    <div class="media-body {{song.trackId==playingSongId? ' btn-primary' : ''}}">
+        <h4 class="media-heading">{{song.trackName}}</h4>
+        {{song.artistName}}<br/>
+        {{song.collectionName}}
+    </div>
+</div>
+<div class="btn-group">
+    <a ng-repeat="page in artistSongs | pageCount:pageSize"
+        ng-click="selectPage($index + 1)"
+        class="btn btn-default" ng-class="getPageClass($index + 1)">
+        {{$index + 1}}
+    </a>
+</div>
+
