@@ -30,7 +30,7 @@ Extra features: simple pagination with 5 songs per page just for demonstration.
 I wanted to paginate my requests to the web service too but it is not supported.
 - Requirements to build the app. NOTHING
 - Instructions to build and deploy the app: just create a server to serve the files in the musicPlayer repositoryt. 
-I created one using aa node.js module called Connect.
-To install Connect, run the following command: npm install connect
+I created one using aa node.js moduled called Connect and serve-static.
+To install Connect, run the following command: npm install connect and npm install serve-static
 server.js is included with which you can create a simple web server to respond to requests on port 5000.
 Place the file in the nodejs installation directory and run it from node after adjusting the path of folder with files to serve requests.
